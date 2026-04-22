@@ -1,8 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useState } from "react";
+import { searchMovies, getMovieDetail } from "./services/api";
+
+import SearchBar from "./componentes/SearchBar";
+import MovieList from "./componentes/MovieList";
+import MovieDetail from "./componentes/MovieDetail";
+import Loader from "./componentes/Loader";
+import ErrorMessage from "./componentes/ErrorMessage";
 
 function App() {
   const [movies, setMovies] = useState([]);
