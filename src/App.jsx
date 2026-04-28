@@ -21,7 +21,7 @@ function App() {
 
     try {
       const data = await searchMovies(query);
-      console.log(data); // 👈 IMPORTANTE
+      console.log(data);
 
       if (data.Response === "False") {
         setNoResults(true);
@@ -30,7 +30,7 @@ function App() {
         setMovies(data.Search);
       }
     } catch (err) {
-      console.log(err); // 👈 IMPORTANTE
+      console.log(err);
       setError("Error al buscar");
     }
 
@@ -55,7 +55,15 @@ function App() {
     <div>
       <h1>Buscador de Películas 🎬</h1>
 
-      <SearchBar onSearch={handleSearch} />
+      <SearchBar 
+        onSearch={handleSearch}
+        onClear={() => {
+          setMovies([]);
+          setSelected(null);
+          setNoResults(false);
+          setError("");
+        }}
+      />
 
       {loading && <Loader />}
       {error && <ErrorMessage message={error} />}
