@@ -4,7 +4,7 @@ export default function MovieDetail({ movie, onBack }) {
       <button onClick={onBack}>Volver</button>
 
       <h2>{movie.Title}</h2>
-      <img src={movie.Poster} />
+      <img src={movie.Poster} alt={movie.Title} />
 
       <p>Año: {movie.Year}</p>
       <p>Género: {movie.Genre}</p>

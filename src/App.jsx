@@ -21,6 +21,7 @@ function App() {
 
     try {
       const data = await searchMovies(query);
+      console.log(data); // 👈 IMPORTANTE
 
       if (data.Response === "False") {
         setNoResults(true);
@@ -28,7 +29,8 @@ function App() {
       } else {
         setMovies(data.Search);
       }
-    } catch {
+    } catch (err) {
+      console.log(err); // 👈 IMPORTANTE
       setError("Error al buscar");
     }
 
@@ -41,7 +43,8 @@ function App() {
     try {
       const data = await getMovieDetail(id);
       setSelected(data);
-    } catch {
+    } catch (err) {
+      console.log(err);
       setError("Error al cargar detalle");
     }
 
@@ -58,11 +61,18 @@ function App() {
       {error && <ErrorMessage message={error} />}
       {noResults && <p>No se encontraron resultados</p>}
 
-      {!selected && <MovieList movies={movies} onSelect={handleSelect} />}
-      {selected && <MovieDetail movie={selected} onBack={() => setSelected(null)} />}
+      {!selected && (
+        <MovieList movies={movies} onSelect={handleSelect} />
+      )}
+
+      {selected && (
+        <MovieDetail
+          movie={selected}
+          onBack={() => setSelected(null)}
+        />
+      )}
     </div>
   );
 }
 
 export default App;
-
