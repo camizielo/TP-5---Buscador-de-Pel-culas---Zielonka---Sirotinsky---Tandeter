@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +24,6 @@ h1 {
   color: #facc15; /* amarillo */
 }
 
-/* FORMULARIO */
 form {
   margin: 25px 0;
   display: flex;
@@ -32,7 +31,6 @@ form {
   gap: 10px;
 }
 
-/* INPUT */
 input {
   padding: 10px 15px;
   border-radius: 8px;
@@ -41,7 +39,6 @@ input {
   font-size: 1rem;
 }
 
-/* BOTÓN */
 button {
   padding: 10px 15px;
   border-radius: 8px;
@@ -96,7 +93,6 @@ div > div > div:hover {
   background: #334155;
 }
 
-/* IMAGEN */
 img {
   width: 100%;
   border-radius: 8px;
@@ -108,7 +104,6 @@ h3 {
   margin: 10px 0 5px;
 }
 
-/* DETALLE */
 h2 {
   margin-top: 20px;
   font-size: 2rem;
@@ -118,7 +113,6 @@ button {
   margin-top: 10px;
 }
 
-/* DETALLE CONTENEDOR */
 div:has(h2) {
   max-width: 600px;
   margin: auto;
