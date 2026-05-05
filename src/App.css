@@ -88,11 +88,6 @@ p {
   transform: scale(1.05);
 }
 
-div > div > div:hover {
-  transform: translateY(-5px);
-  background: #334155;
-}
-
 img {
   width: 100%;
   border-radius: 8px;
